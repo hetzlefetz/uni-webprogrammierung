@@ -1,0 +1,96 @@
+/* 
+Ergänzen Sie die vorangegangene ESA um ein Media Query, so daß auch die Elemente im main-Elemente responsive werden.
+Im Media Query nehmen Sie auch sonstige Einstellungen für Farben, Schriften und Bilder vor, so daß sich ein schlüssiges Konzept für große und kleine viewports ergibt.
+Beachten Sie die im Unterricht besprochenen best practices.
+
+*/
+
+* {
+  --bg: #e0e0e0;
+  --primary: #000814;
+  --secondary: #001d3d;
+  --highlight: #ffd60a;
+  --higlight-secondary: #ffc300;
+  --text-color: #0e0e0e;
+  --text-color-inverted: #e0e0e0;
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --bg: #0e0e0e;
+    --primary: #004bbb;
+    --secondary: #494949;
+    --highlight: #ffd60a;
+    --higlight-secondary: #ffc300;
+    --text-color: #e0e0e0;
+    --text-color-inverted: #0e0e0e;
+  }
+}
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--bg);
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+article {
+  color: var(--text-color-inverted);
+  background-color: var(--primary);
+  font-size: larger;
+}
+
+img {
+  max-width: 100%;
+  min-width: 100%;
+}
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  margin-top: 0;
+  align-content: center;
+  background-color: var(--secondary);
+}
+ul {
+  margin: 0;
+  z-index: 1000;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.sub-article > h3 {
+  grid-area: "article_head";
+}
+
+.sub-article > img {
+  grid-area: "article_image";
+}
+.sub-article > p {
+  grid-area: "article";
+}
+.sub-article {
+  font-size: smaller;
+  display: grid;
+  grid-template-areas:
+    "article_head . ."
+    ". article_image ."
+    "article article article";
+}
+
+@media (max-width: 768px) {
+  h1:first-of-type {
+    align-self: center;
+  }
+  .sub-article > h3 {
+    align-self: center;
+  }
+
+  .sub-article {
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+  }
+}

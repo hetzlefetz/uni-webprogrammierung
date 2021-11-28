@@ -1,0 +1,62 @@
+* {
+  --bg: #e0e0e0;
+  --primary: #000814;
+  --secondary: #001d3d;
+  --highlight: #ffd60a;
+  --higlight-secondary: #ffc300;
+  --text-color: #0e0e0e;
+  --text-color-inverted: #e0e0e0;
+}
+@media (prefers-color-scheme: dark) {
+  * {
+    --bg: #0e0e0e;
+    --primary: #004bbb;
+    --secondary: #494949;
+    --highlight: #ffd60a;
+    --higlight-secondary: #ffc300;
+    --text-color: #e0e0e0;
+    --text-color-inverted: #0e0e0e;
+  }
+}
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--bg);
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+article:nth-child(even) {
+  color: var(--text-color-inverted);
+  background-color: var(--primary);
+  font-size: larger;
+}
+article:nth-child(odd) {
+  color: var(--text-color-inverted);
+  background-color: var(--secondary);
+  font-size: smaller;
+}
+img {
+  max-width: 100%;
+  min-width: 100%;
+}
+nav {
+  width: 100%;
+}
+ul {
+  padding: 0;
+}
+nav > ul > li {
+  display: inline-block;
+  width: calc((100% / 3) - 10px);
+  text-align: center;
+}
+nav > ul > :nth-child(even) > a {
+  color: var(--higlight-secondary);
+}
+
+nav > ul > :nth-child(odd) > a {
+  color: var(--highlight);
+}
