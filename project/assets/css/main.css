@@ -1,0 +1,169 @@
+* {
+  --bg: #e0e0e0;
+  --primary: #000814;
+  --secondary: #001d3d;
+  --highlight: #ffd60a;
+  --higlight-secondary: #ffc300;
+  --text-color: #0e0e0e;
+  --text-color-inverted: #e0e0e0;
+
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  * {
+    --bg: #0e0e0e;
+    --primary: #004bbb;
+    --secondary: #494949;
+    --highlight: #ffd60a;
+    --higlight-secondary: #ffc300;
+    --text-color: #e0e0e0;
+    --text-color-inverted: #0e0e0e;
+  }
+}
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--bg);
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+main > article {
+  padding: 1px 24px 0 24px;
+}
+header {
+  padding: 0 24px 0 24px;
+}
+article {
+  color: var(--text-color-inverted);
+  background-color: var(--primary);
+  font-size: medium;
+}
+article > article {
+  align-content: center;
+}
+article > article > * {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+article > article > h3 {
+  text-align: center;
+}
+p,
+form {
+  max-width: 50vw;
+  text-align: justify;
+}
+img {
+  max-height: 20vh;
+}
+ul {
+  padding: 0;
+}
+nav {
+  width: 100%;
+  position: sticky;
+  top: 0;
+}
+
+nav > ul {
+  display: flex;
+  background-color: var(--bg);
+  justify-content: space-around;
+  flex-direction: row;
+  list-style-type: none;
+}
+nav > ul > li {
+  text-align: center;
+}
+
+#topnav {
+  display: none;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+form > div > p {
+  font-size: x-small;
+  flex-grow: 1;
+}
+form > div {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  nav,
+  h1 {
+    display: none;
+  }
+
+  #topnav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--bg);
+    position: relative;
+  }
+
+  #topnav-bar {
+    display: flex;
+    flex-direction: row;
+  }
+  #topnav-bar > h2 {
+    flex-grow: 1;
+    padding-left: 24px;
+  }
+  #topnav-bar > button {
+    min-width: 5em;
+  }
+  p {
+    max-width: initial;
+  }
+}
+#commentContent {
+  padding: 0 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+#menuContent {
+  display: none;
+}
+
+/* Style navigation menu links */
+#menuContent a {
+  color: var(--text-color);
+  padding: 14px 24px;
+  text-decoration: none;
+  font-size: 1.5em;
+  display: block;
+}
+#menuContent a:hover {
+  background-color: var(--primary);
+  color: var(--text-color-inverted);
+}
+
+/* Style the hamburger menu */
+#menuContent a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-weight: bold;
+}
+
+/* Add a grey background color on mouse-over */

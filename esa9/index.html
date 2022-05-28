@@ -1,101 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Newsletter Signup</title>
-    <script src="index.js" async defer></script>
-  </head>
 
-  <body>
-    <form name="f1">
-      <fieldset>
-        <legend>Basic information</legend>
-        <label for="name">Enter your name: </label>
-        <input type="text" name="name" id="name" required />
-        <label for="email">Enter your email: </label>
-        <input type="email" name="email" id="email" required />
-        <label for="shoesize">Your shoe size</label>
-        <input type="number" name="shoesize" id="shoesize" />
-        <label for="pw">Your Password</label>
-        <input type="password" name="pw" id="pw" />
-      </fieldset>
-      <fieldset>
-        <legend>Delivery options</legend>
-        <label for="frequency"
-          >How often should we sent you the newsletter:
-        </label>
-        <input
-          name="frequency"
-          type="range"
-          id="frequency"
-          min="0"
-          max="100"
-          value="10"
-        />
-        <label for="sender">Who do you want to receive mails from: </label>
-        <input id="sender" name="sender" type="email" list="senders" />
-        <datalist id="senders">
-          <option value="foo@bar.com"></option>
-          <option value="bar@foo.com"></option>
-          <option value="com@foo.bar"></option>
-          <option value="bar@com.foo"></option>
-        </datalist>
+<head>
+  <meta charset="utf-8" />
+  <title>Newsletter Signup</title>
+  <script src="index.js" async defer></script>
+</head>
 
-        <label for="weekday"
-          >What day of the week you want to reveive the newsletter:
-        </label>
-        <select id="weekday" multiple>
-          <option value="0">Monday</option>
-          <option value="1">Tuesday</option>
-          <option value="2">Wednesday</option>
-          <option value="3">Thursday</option>
-          <option value="4">Friday</option>
-          <option value="5">Saturday</option>
-          <option value="6">Sunday</option>
+<body>
+  <form name="f1">
+    <fieldset>
+      <legend>Basic information</legend>
+      <label for="name">Enter your name: </label>
+      <input type="text" name="name" id="name" required />
+      <label for="email">Enter your email: </label>
+      <input type="email" name="email" id="email" required />
+      <label for="shoesize">Your shoe size</label>
+      <input type="number" name="shoesize" id="shoesize" />
+      <label for="pw">Your Password</label>
+      <input type="password" name="pw" id="pw" />
+    </fieldset>
+    <fieldset>
+      <legend>Delivery options</legend>
+      <label for="frequency">How often should we sent you the newsletter:
+      </label>
+      <input name="frequency" type="range" id="frequency" min="0" max="100" value="10" />
+      <label for="sender">Who do you want to receive mails from: </label>
+      <input id="sender" name="sender" type="email" list="senders" />
+      <datalist id="senders">
+        <option value="foo@bar.com"></option>
+        <option value="bar@foo.com"></option>
+        <option value="com@foo.bar"></option>
+        <option value="bar@com.foo"></option>
+      </datalist>
+
+      <label for="weekday">What day of the week you want to reveive the newsletter:
+      </label>
+      <select id="weekday" multiple>
+        <option value="0">Monday</option>
+        <option value="1">Tuesday</option>
+        <option value="2">Wednesday</option>
+        <option value="3">Thursday</option>
+        <option value="4">Friday</option>
+        <option value="5">Saturday</option>
+        <option value="6">Sunday</option>
+      </select>
+    </fieldset>
+    <fieldset>
+      <legend>Newsletter appearence:</legend>
+      <label for="backgroundColor">What background color should the news letter have:
+      </label>
+      <input name="backgroundColor" type="color" id="backgroundColor" />
+      <label for="fontselect">What font should we use: </label>
+      <selec name="font" id="fontselect">
+        <option value="Comic_Sans">Comic Sans</option>
+        <option value="Webdings">Webdings</option>
+        <option value="Zalgo">Zalgo</option>
         </select>
-      </fieldset>
-      <fieldset>
-        <legend>Newsletter appearence:</legend>
-        <label for="backgroundColor"
-          >What background color should the news letter have:
-        </label>
-        <input name="backgroundColor" type="color" id="backgroundColor" />
-        <label for="fontselect">What font should we use: </label>
-        <select id="fontselect">
-          <option value="Comic_Sans">Comic Sans</option>
-          <option value="Webdings">Webdings</option>
-          <option value="Zalgo">Zalgo</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        <legend>What should the newsletter be about</legend>
-        <input type="checkbox" id="interest1" name="interest" value="stuff" />
-        <label for="interest1">Stuff</label>
-        <input
-          type="checkbox"
-          id="interest2"
-          name="interest"
-          value="other stuff"
-        />
-        <label for="interest1">other stuff</label>
-        <input
-          type="checkbox"
-          id="interest3"
-          name="interest"
-          value="no stuff"
-        />
-        <label for="interest1">no stuff</label>
-        <label for="otherValue">Other</label>
-        <input
-          type="checkbox"
-          id="interest4"
-          name="interest"
-          value="no stuff"
-        />
-        <input type="text" id="otherValue" name="interest" />
-      </fieldset>
-      <button type="button" id="btn-cancel">Cancel</button>
-      <input type="submit" value="Subscribe!" />
-    </form>
-  </body>
+    </fieldset>
+    <fieldset>
+      <legend>What should the newsletter be about</legend>
+      <label for="interest1">Stuff</label>
+      <input type="checkbox" id="interest1" name="interest" value="stuff" />
+      <label for="interest2">other stuff</label>
+      <input type="checkbox" id="interest2" name="interest" value="other stuff" />
+      <label for="interest3">no stuff</label>
+      <input type="checkbox" id="interest3" name="interest" value="no stuff" />
+      <label for="interest4">Other</label>
+      <input type="checkbox" id="interest4" name="interest" value="otherValue" />
+      <input type="text" id="otherValue" name="interest" />
+    </fieldset>
+    <button type="button" id="btn-cancel">Cancel</button>
+    <input id="submit" name="Subscribe" type="submit" value="Subscribe!" />
+  </form>
+</body>
+
 </html>

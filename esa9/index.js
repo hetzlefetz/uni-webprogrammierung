@@ -7,7 +7,12 @@
       fn(inputs[i]);
     }
   };
-  const printField = (x) => console.log(`name: ${x.name}, value: ${x.value}`);
+  const printField = (x) =>
+    console.log(
+      `name: ${x.id}, value: ${
+        x.type === "checkbox" ? x.checked : x.value
+      }, type: ${x.type}`
+    );
   const printFieldIfNotEmpty = (x) => x.value && printField(x);
 
   const printInputs = (skipEmpty = false) => {
